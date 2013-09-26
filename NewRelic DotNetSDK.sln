@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewRelic.DotNetSDK", "NewRelic.DotNetSDK\NewRelic.DotNetSDK.csproj", "{1CB41B48-9C61-496E-B9CC-3EC354E63674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewRelic.DotNetSDK.Tests", "NewRelic.DotNetSDK.Tests\NewRelic.DotNetSDK.Tests.csproj", "{24D4F224-BF0B-4E13-B32B-8D17AF71404B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AC070DC1-2224-4740-ABE4-CBA187D5C5F3}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CB41B48-9C61-496E-B9CC-3EC354E63674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB41B48-9C61-496E-B9CC-3EC354E63674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB41B48-9C61-496E-B9CC-3EC354E63674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB41B48-9C61-496E-B9CC-3EC354E63674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24D4F224-BF0B-4E13-B32B-8D17AF71404B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D4F224-BF0B-4E13-B32B-8D17AF71404B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D4F224-BF0B-4E13-B32B-8D17AF71404B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D4F224-BF0B-4E13-B32B-8D17AF71404B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
