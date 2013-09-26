@@ -45,9 +45,9 @@ namespace NewRelic.DotNetSDK.Publish.Internal
 
         //// ----------------------------------------------------------------------------------------------------------
 		
-        public void SetRequest(Request request)
+        public void SetRequest(Request req)
         {
-            this.request = request;
+            request = req;
         }
 
         //// ----------------------------------------------------------------------------------------------------------

@@ -20,9 +20,11 @@ namespace NewRelic.DotNetSDK.Publish.Binding
         private const string Status = "status";
 
         private readonly Context context;
-        private readonly Dictionary<ComponentData, LinkedList<MetricData>> metrics = new Dictionary<ComponentData, LinkedList<MetricData>>();
 
-        private bool delivered = false;
+        private readonly Dictionary<ComponentData, LinkedList<MetricData>> metrics =
+            new Dictionary<ComponentData, LinkedList<MetricData>>();
+
+        private bool delivered;
 
         //// ----------------------------------------------------------------------------------------------------------
 
@@ -42,7 +44,8 @@ namespace NewRelic.DotNetSDK.Publish.Binding
 
         //// ----------------------------------------------------------------------------------------------------------
 
-        public MetricData AddMetric(ComponentData component, string name, int count, float value, float minValue, float maxValue, float sumOfSquares)
+        public MetricData AddMetric(
+            ComponentData component, string name, int count, float value, float minValue, float maxValue, float sumOfSquares)
         {
             var metricData = AddMetric(component, new MetricData(name, count, value, minValue, maxValue, sumOfSquares));
 
@@ -53,7 +56,7 @@ namespace NewRelic.DotNetSDK.Publish.Binding
 
         public void Deliver()
         {
-            // do not send an empty request
+            // Do not send an empty request
             if (metrics.Count == 0)
             {
                 Context.GetLogger().Debug("No metrics were reported for this poll cycle");
