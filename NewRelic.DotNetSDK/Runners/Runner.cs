@@ -6,8 +6,6 @@ using System.Threading;
 using NewRelic.DotNetSDK.Binding;
 using NewRelic.DotNetSDK.Configuration;
 
-using Ninject;
-
 namespace NewRelic.DotNetSDK.Runners
 {
     /// <summary>
