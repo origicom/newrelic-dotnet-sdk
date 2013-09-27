@@ -1,6 +1,4 @@
-﻿using NewRelic.DotNetSDK.Publish;
-
-namespace NewRelic.DotNetSDK.Tests.Publish
+﻿namespace NewRelic.DotNetSDK.Tests
 {
     /// <summary>
     /// Simple agent for unit testing

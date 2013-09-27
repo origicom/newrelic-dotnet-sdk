@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Threading;
 
-using NewRelic.DotNetSDK.Publish.Binding;
-using NewRelic.DotNetSDK.Publish.Configuration;
+using NewRelic.DotNetSDK.Binding;
+using NewRelic.DotNetSDK.Configuration;
 
-namespace NewRelic.DotNetSDK.Publish
+using Ninject;
+
+namespace NewRelic.DotNetSDK.Runners
 {
     /// <summary>
     /// The main entry point for executing the SDK.
@@ -21,25 +24,35 @@ namespace NewRelic.DotNetSDK.Publish
 
         private readonly LinkedList<Agent> agents;
 
-        private readonly HashSet<AgentFactory> factories = new HashSet<AgentFactory>();
+        private readonly HashSet<AgentFactory> factories;
 
-        private int pollInterval = 60;
+        private readonly IRunnable runner;
+
+        private int pollIntervalSeconds = 60;
+
+        private Timer timer;
 
         //// ----------------------------------------------------------------------------------------------------------
 
-        public Runner()
+        public Runner(IRunnable runnable)
         {
             agents = new LinkedList<Agent>();
 
-            try
-            {
-                config = new SDKConfiguration();
-            }
-            catch (Exception ex)
-            {
-                Context.GetLogger().Fatal(ex.Message, ex);
-                throw new ApplicationException("Error initializing configuration", ex);
-            }
+            factories = new HashSet<AgentFactory>();
+
+            config = new SDKConfiguration();
+
+            runner = runnable;
+
+            //try
+            //{
+            //    //config = new SDKConfiguration();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Context.GetLogger().Fatal(ex.Message, ex);
+            //    throw new ApplicationException("Error initializing configuration", ex);
+            //}
         }
 
         //// ----------------------------------------------------------------------------------------------------------
@@ -66,22 +79,25 @@ namespace NewRelic.DotNetSDK.Publish
         //// ----------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// Setup the {@code Runner} and run in a loop that will never return.
-        /// Add an {@link AgentFactory} or register {@link Agent}s before calling.
-        /// @throws ConfigurationException if the {@link Runner} was not configured correctly
+        /// Setup the <see cref="Runner" /> and run in a loop that will never return.
+        /// Add an <see cref="AgentFactory" /> or register <see cref="Agent" />s directly before calling.
         /// </summary>
         /// <exception cref="ConfigurationErrorsException">Throws if the Runner was not correctly configured</exception>
         public void SetupAndRun()
         {
             SetupAgents();
 
-            pollInterval = config.GetPollInterval();
+            pollIntervalSeconds = config.GetPollInterval();
 
-            var pollAgentsRunnable = new PollAgentsRunnable(agents);
+            runner.Agents = agents;
 
-            // TODO: Urgent! This needs moving onto a thread and into a loop, at the moment it will run once and return
-            // TODO: Need to re-run this every pollInterval
-            pollAgentsRunnable.Run();
+            var pollIntervalMilliseconds = pollIntervalSeconds * 1000;
+
+            timer = new Timer(runner.Run, null, 0, pollIntervalMilliseconds);
+
+            while (true)
+            {
+            }
         }
 
         //// ----------------------------------------------------------------------------------------------------------

@@ -3,7 +3,7 @@ using System.Reflection;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace NewRelic.DotNetSDK.Tests.Publish
+namespace NewRelic.DotNetSDK.Tests
 {
     [TestClass]
     public class AgentTests

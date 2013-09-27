@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace NewRelic.DotNetSDK.Publish.Configuration
+namespace NewRelic.DotNetSDK.Configuration
 {
     public class NewRelicConfigurationSection : ConfigurationSection
     {

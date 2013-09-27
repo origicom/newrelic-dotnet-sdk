@@ -1,6 +1,6 @@
-﻿using NewRelic.DotNetSDK.Publish.Binding;
+﻿using NewRelic.DotNetSDK.Binding;
 
-namespace NewRelic.DotNetSDK.Publish.Internal
+namespace NewRelic.DotNetSDK.Internal
 {
     public class DataCollector
     {

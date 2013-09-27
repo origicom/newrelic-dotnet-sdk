@@ -8,7 +8,7 @@ using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace NewRelic.DotNetSDK.Publish.Binding
+namespace NewRelic.DotNetSDK.Binding
 {
     public class Request
     {

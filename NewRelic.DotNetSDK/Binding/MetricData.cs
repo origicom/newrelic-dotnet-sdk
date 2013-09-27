@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NewRelic.DotNetSDK.Publish.Binding
+namespace NewRelic.DotNetSDK.Binding
 {
     public class MetricData
     {

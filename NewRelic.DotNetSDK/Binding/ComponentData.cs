@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewRelic.DotNetSDK.Publish.Binding
+namespace NewRelic.DotNetSDK.Binding
 {
     public class ComponentData
     {

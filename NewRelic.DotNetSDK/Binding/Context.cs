@@ -4,7 +4,7 @@ using System.Net;
 
 using log4net;
 
-namespace NewRelic.DotNetSDK.Publish.Binding
+namespace NewRelic.DotNetSDK.Binding
 {
     public class Context
     {

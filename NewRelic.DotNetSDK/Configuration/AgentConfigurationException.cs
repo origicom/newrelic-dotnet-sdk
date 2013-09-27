@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewRelic.DotNetSDK.Publish.Configuration
+namespace NewRelic.DotNetSDK.Configuration
 {
     public class AgentConfigurationException : Exception
     {

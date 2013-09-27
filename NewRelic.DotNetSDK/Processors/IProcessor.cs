@@ -1,4 +1,4 @@
-﻿namespace NewRelic.DotNetSDK.Publish.Processors
+﻿namespace NewRelic.DotNetSDK.Processors
 {
     /// <summary>
     /// A general purpose interface for processing metric values in <see cref="Agent" />

@@ -2,35 +2,24 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-using NewRelic.DotNetSDK.Publish.Binding;
+using NewRelic.DotNetSDK.Binding;
 
-namespace NewRelic.DotNetSDK.Publish
+namespace NewRelic.DotNetSDK.Runners
 {
-    internal class PollAgentsRunnable
+    public class PollAgentsRunnable : IRunnable
     {
         //// ----------------------------------------------------------------------------------------------------------
-
-        private readonly LinkedList<Agent> agents; 
-
-        //// ----------------------------------------------------------------------------------------------------------
-		 
-        public PollAgentsRunnable(LinkedList<Agent> agents)
-        {
-            this.agents = agents;
-        }
-
-        //// ----------------------------------------------------------------------------------------------------------
 		
-        public void Run()
+        public void Run(object arg)
         {
-            if (agents == null)
+            if (Agents == null || Agents.Count == 0)
                 return;
 
             Context.GetLogger().Debug("Harvest and report data");
 
             try
             {
-                foreach (var agent in agents)
+                foreach (var agent in Agents)
                 {
                     var request = agent.GetCollector().GetContext().CreateRequest();
                     agent.GetCollector().SetRequest(request);
@@ -45,6 +34,10 @@ namespace NewRelic.DotNetSDK.Publish
                 Debug.WriteLine(ex.StackTrace);
             }
         }
+
+        //// ----------------------------------------------------------------------------------------------------------
+		 
+        public LinkedList<Agent> Agents { get; set; }
 
         //// ----------------------------------------------------------------------------------------------------------		 
     }

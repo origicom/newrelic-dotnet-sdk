@@ -1,7 +1,7 @@
-﻿using NewRelic.DotNetSDK.Publish.Binding;
-using NewRelic.DotNetSDK.Publish.Internal;
+﻿using NewRelic.DotNetSDK.Binding;
+using NewRelic.DotNetSDK.Internal;
 
-namespace NewRelic.DotNetSDK.Publish
+namespace NewRelic.DotNetSDK
 {
     public abstract class Agent
     {

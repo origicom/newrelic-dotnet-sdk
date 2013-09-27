@@ -2,12 +2,13 @@
 using System.Configuration;
 using System.IO;
 
-using NewRelic.DotNetSDK.Publish.Binding;
+using NewRelic.DotNetSDK.Binding;
+using NewRelic.DotNetSDK.Runners;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace NewRelic.DotNetSDK.Publish
+namespace NewRelic.DotNetSDK
 {
     /// <summary>
     /// A factory for creating configured <see cref="Agent" />s. <see cref="AgentFactory" /> has two roles: Create new

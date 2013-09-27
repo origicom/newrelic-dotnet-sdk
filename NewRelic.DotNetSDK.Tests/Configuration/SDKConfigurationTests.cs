@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using NewRelic.DotNetSDK.Publish.Configuration;
+using NewRelic.DotNetSDK.Configuration;
 
-namespace NewRelic.DotNetSDK.Tests.Publish.Configuration
+namespace NewRelic.DotNetSDK.Tests.Configuration
 {
     [TestClass]
     public class SDKConfigurationTests

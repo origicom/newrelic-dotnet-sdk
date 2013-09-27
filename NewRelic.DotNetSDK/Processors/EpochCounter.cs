@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewRelic.DotNetSDK.Publish.Processors
+namespace NewRelic.DotNetSDK.Processors
 {
     public class EpochCounter : IProcessor
     {

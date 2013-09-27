@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Configuration;
 
-using NewRelic.DotNetSDK.Publish.Binding;
+using NewRelic.DotNetSDK.Binding;
 
-namespace NewRelic.DotNetSDK.Publish.Configuration
+namespace NewRelic.DotNetSDK.Configuration
 {
     public class SDKConfiguration
     {
@@ -24,7 +24,7 @@ namespace NewRelic.DotNetSDK.Publish.Configuration
 		
         public SDKConfiguration()
         {
-            LoadConfigurationFromApplicationConfiguration(ConfigGroupName, ConfigSectionName);
+            //LoadConfigurationFromApplicationConfiguration(ConfigGroupName, ConfigSectionName);
         }
 
         //// ----------------------------------------------------------------------------------------------------------
